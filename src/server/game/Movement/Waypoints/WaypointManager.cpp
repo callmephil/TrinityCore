@@ -64,7 +64,7 @@ void WaypointMgr::Load()
             continue;
         }
 
-        waypoint.Delay = fields[8].GetUInt32();
+        waypoint.Delay = fields[8].GetInt32();
         waypoint.EventId = fields[9].GetUInt32();
         waypoint.EventChance = fields[10].GetInt16();
 

@@ -64,10 +64,13 @@ class WaypointMovementGenerator<Creature> : public MovementGeneratorMedium<Creat
         void StartMove(Creature*, bool relaunch = false);
         static bool CanMove(Creature*);
 
-        TimeTrackerSmall _nextMoveTime;
-        bool _recalculateSpeed;
-        bool _isArrivalDone;
+        TimeTrackerSmall _nextMoveTimer;
+        TimeTrackerSmall _movementInformTimer;
+
+        uint32 _lastSplineId;
         uint32 _pathId;
+        bool _waypointReached;
+        bool _recalculateSpeed;
         bool _repeating;
         bool _loadedFromDB;
         bool _stalled;
